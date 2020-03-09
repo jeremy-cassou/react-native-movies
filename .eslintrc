@@ -1,0 +1,56 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js", ".android.js", ".ios.js",
+          ".jsx", ".android.jsx", ".ios.jsx"
+        ]
+      }
+    }
+  },
+
+  "env": {
+    "es6": true,
+    "node": true
+  },
+
+  "extends": "airbnb",
+
+  "globals": {
+    "document": "readonly",
+    "navigator": "readonly",
+    "window": "readonly",
+    "fetch": "readonly"
+  },
+
+  "rules": {
+    "semi": ["error", "never"],
+    "space-before-function-paren": ["error", "always"],
+    "no-use-before-define": "off",
+    "global-require": "off",
+    "import/no-unresolved": ["error", {
+      "ignore": [
+        "react-native"
+      ]
+    }],
+
+    "react/destructuring-assignment": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/prefer-stateless-function": "off",
+    "react/prop-types": ["error", {
+      "ignore": ["navigation", "dispatch", "children"],
+      "customValidators": [],
+      "skipUndeclared": false
+    }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }]
+  }
+}
